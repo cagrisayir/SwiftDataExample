@@ -5,17 +5,17 @@
 //  Created by Omer Cagri Sayir on 6.01.2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct SwiftDataExampleView: View {
+    @Environment(\.modelContext) private var modelContext
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Button("Add person") {
+            let name = ["Mark", "Lem", "Chase"].randomElement()!
+            let person = PersonModel(name: name)
+            modelContext.insert(person)
+        }.font(.title)
     }
 }
 

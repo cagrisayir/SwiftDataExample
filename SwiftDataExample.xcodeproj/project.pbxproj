@@ -73,6 +73,7 @@
 		0605232B2B496A1B00A8FCAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0605232D2B496A7B00A8FCAF /* PersonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -81,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				0605231F2B49698400A8FCAF /* SwiftDataExampleView.swift */,
-				0605232D2B496A7B00A8FCAF /* PersonModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
