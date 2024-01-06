@@ -10,15 +10,25 @@ import SwiftUI
 
 struct SwiftDataExampleView: View {
     @Environment(\.modelContext) private var modelContext
+
+    @Query private var people: [PersonModel]
+
     var body: some View {
-        Button("Add person") {
-            let name = ["Mark", "Lem", "Chase"].randomElement()!
-            let person = PersonModel(name: name)
-            modelContext.insert(person)
-        }.font(.title)
+        VStack {
+            Button("Add person") {
+                let name = ["Mark", "Lem", "Chase"].randomElement()!
+                let person = PersonModel(name: name)
+                modelContext.insert(person)
+            }.font(.title)
+
+            List(people) { person in
+                Text(person.name)
+            }
+        }
     }
 }
 
 #Preview {
     SwiftDataExampleView()
+        .modelContainer(for: PersonModel.self)
 }
